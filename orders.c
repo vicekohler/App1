@@ -101,3 +101,4 @@ void free_orders(struct order *orders, int order_count) {
         }
     }
     free(orders); // Liberar el arreglo de órdenes.
+}
