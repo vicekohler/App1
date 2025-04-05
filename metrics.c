@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -179,10 +180,50 @@ char* apd(int *size, struct order *orders) {
         for (int j = 0; j < unique_days; j++) {
             if (strcmp(orders[i].order_date, seen_dates[j]) == 0) {
                 already_counted = 1; // Marcar el día como ya contado
+=======
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "metrics.h"
+#include "orders.h"
+
+char* apo(int *size, struct order *orders) {
+    int total_pizzas = 0;
+    int total_ordenes = 0;
+
+    for (int i = 0; i < *size; i++) {
+        total_pizzas += orders[i].quantity;
+        total_ordenes++;
+    }
+
+    float promedio = (float)total_pizzas / total_ordenes;
+
+    char* result = malloc(100);
+    snprintf(result, 100, "Promedio de pizzas por orden: %.2f", promedio);
+
+    return result;
+}
+
+char* apd(int *size, struct order *orders) {
+    int total_pizzas = 0;
+    int total_dias = 0;
+
+    char fechas[100][20];
+    int fechas_count = 0;
+
+    for (int i = 0; i < *size; i++) {
+        total_pizzas += orders[i].quantity;
+
+        int ya_registrada = 0;
+        for (int j = 0; j < fechas_count; j++) {
+            if (strcmp(fechas[j], orders[i].order_date) == 0) {
+                ya_registrada = 1;
+>>>>>>> 1ee7e62f33150b1313281c532a17fdae0bd66a9f
                 break;
             }
         }
 
+<<<<<<< HEAD
         if (!already_counted) {
             seen_dates[unique_days++] = orders[i].order_date; // Agregar el día a las fechas vistas
         }
@@ -347,4 +388,18 @@ char* dlsp(int *size, struct order *orders) {
     char *result = malloc(128); // Reservar memoria para el resultado
     snprintf(result, 128, "Fecha con menos pizzas vendidas: %s (%d pizzas)", worst_day, min_pizzas); // Formatear el resultado
     return result; // Devolver el resultado
+=======
+        if (!ya_registrada) {
+            strcpy(fechas[fechas_count], orders[i].order_date);
+            fechas_count++;
+        }
+    }
+
+    float promedio = (float)total_pizzas / fechas_count;
+
+    char* result = malloc(100);
+    snprintf(result, 100, "Promedio de pizzas por día: %.2f", promedio);
+
+    return result;
+>>>>>>> 1ee7e62f33150b1313281c532a17fdae0bd66a9f
 }

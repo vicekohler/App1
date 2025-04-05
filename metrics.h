@@ -3,6 +3,7 @@
 
 #include "orders.h"
 
+<<<<<<< HEAD
 // Ejecuta una métrica específica según el nombre proporcionado.
 char* execute_metric(const char *name, int *size, struct order *orders);
 
@@ -43,3 +44,10 @@ char* dmsp(int *size, struct order *orders);
 char* dlsp(int *size, struct order *orders);
 
 #endif
+=======
+char* apo(int *size, struct order *orders);
+char* apd(int *size, struct order *orders);
+
+#endif
+
+>>>>>>> 1ee7e62f33150b1313281c532a17fdae0bd66a9f
