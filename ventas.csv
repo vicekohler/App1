@@ -1,5 +1,0 @@
-pizza_id,order_id,pizza_name_id,quantity,order_date,order_time,unit_price,total_price,pizza_size,pizza_category,pizza_ingredients,pizza_name
-1,1,hawaiian_m,2,1/1/2015,11:00:00,13.25,26.50,M,Classic,"Sliced Ham,Pineapple,Mozzarella Cheese",The Hawaiian Pizza
-2,2,pepperoni_m,1,1/1/2015,11:15:00,12.50,12.50,M,Classic,"Pepperoni,Mozzarella Cheese",The Pepperoni Pizza
-3,2,veggie_l,1,1/1/2015,11:15:00,15.00,15.00,L,Veggie,"Bell Peppers,Mushrooms,Olives,Mozzarella Cheese",The Veggie Pizza
-4,3,hawaiian_m,1,1/2/2015,12:00:00,13.25,13.25,M,Classic,"Sliced Ham,Pineapple,Mozzarella Cheese",The Hawaiian Pizza
