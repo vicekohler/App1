@@ -4,17 +4,23 @@
 #include "orders.h"
 
 int main() {
-    int size = 3;
+    int size = 5;
 
-    struct order orders[3] = {
-        {2},
-        {3},
-        {1}
+    struct order orders[5] = {
+        {2, "1/1/2015"},
+        {3, "1/1/2015"},
+        {1, "2/1/2015"},
+        {4, "2/1/2015"},
+        {2, "3/1/2015"}
     };
 
-    char* resultado = apo(&size, orders);
-    printf("%s\n", resultado);
+    char* resultado1 = apo(&size, orders);
+    printf("%s\n", resultado1);
+    free(resultado1);
 
-    free(resultado); // ¡Muy importante para evitar fugas de memoria!
+    char* resultado2 = apd(&size, orders);
+    printf("%s\n", resultado2);
+    free(resultado2);
+
     return 0;
 }

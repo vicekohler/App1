@@ -3,7 +3,8 @@
 
 struct order {
     int quantity;
-    // En el futuro puedes agregar más campos si lo necesitas
+    char order_date[20]; // ejemplo: "1/1/2015"
 };
 
 #endif
+
